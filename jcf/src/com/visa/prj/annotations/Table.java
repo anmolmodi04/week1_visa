@@ -1,4 +1,4 @@
-package com.visa.orj.annotations;
+package com.visa.prj.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,7 +1,7 @@
 package com.visa.prj.entity;
 
-import com.visa.orj.annotations.Column;
-import com.visa.orj.annotations.Table;
+import com.visa.prj.annotations.Column;
+import com.visa.prj.annotations.Table;
 
 @Table(name = "products")
 public class Product implements Comparable<Product> {

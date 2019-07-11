@@ -2,8 +2,8 @@ package com.visa.prj.util;
 
 import java.lang.reflect.Method;
 
-import com.visa.orj.annotations.Column;
-import com.visa.orj.annotations.Table;
+import com.visa.prj.annotations.Column;
+import com.visa.prj.annotations.Table;
 
 public class SQLUtil {
 
