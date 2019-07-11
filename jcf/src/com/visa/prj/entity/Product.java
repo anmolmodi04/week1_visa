@@ -1,6 +1,52 @@
 package com.visa.prj.entity;
 
+import com.visa.orj.annotations.Column;
+import com.visa.orj.annotations.Table;
+
+@Table(name = "products")
 public class Product implements Comparable<Product> {
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((category == null) ? 0 : category.hashCode());
+		result = prime * result + count;
+		result = prime * result + id;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		if (category == null) {
+			if (other.category != null)
+				return false;
+		} else if (!category.equals(other.category))
+			return false;
+		if (count != other.count)
+			return false;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
+			return false;
+		return true;
+	}
+
 	private int id;
 	private String name;
 	private double price;
@@ -17,7 +63,8 @@ public class Product implements Comparable<Product> {
 		this.category = category;
 		this.count = count;
 	}
-
+	
+	@Column(name="prd_id", type="NUMERIC(12)")
 	public int getId() {
 		return id;
 	}
@@ -25,7 +72,8 @@ public class Product implements Comparable<Product> {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
+	@Column(name="prd_name")
 	public String getName() {
 		return name;
 	}

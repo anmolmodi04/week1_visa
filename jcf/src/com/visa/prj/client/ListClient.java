@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.visa.prj.entity.Product;
 
@@ -17,7 +19,10 @@ public class ListClient {
 		products.add(new Product(5, "Sony Bravia", 125000.00, "tv", 900));
 		products.add(new Product(912, "One Plus", 32000.00, "mobile", 100));
 		products.add(new Product(88, "HP Printer", 19000.00, "computer", 100));
-
+		
+		Map<String, List<Product>> map = products.stream().collect(Collectors.groupingBy(p -> p.getCategory()));
+		System.out.println(map);
+		
 		// Collections.sort(products);
 		// Lambda Expression
 		Collections.sort(products, (p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()));
