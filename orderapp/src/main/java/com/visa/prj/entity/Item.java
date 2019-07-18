@@ -22,6 +22,16 @@ public class Item {
 	private Product product;
 	
 	private double amount;
+	
+	private int qty;
+
+	public int getQty() {
+		return qty;
+	}
+
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
 
 	public int getItemId() {
 		return itemId;
