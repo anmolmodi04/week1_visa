@@ -48,5 +48,4 @@ public class BookingDaoJpaImpl implements BookingDao {
 		query.setParameter("u", user.getUsername());
 		return query.getResultList();
 	}
-
 }

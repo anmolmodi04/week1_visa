@@ -23,7 +23,6 @@ public class ProductController {
 	private OrderService service;
 	
 	@GetMapping("products") 
-//	@RequestMapping(value="products",)
 	public @ResponseBody List<Product> getProducts(@RequestParam(name = "category", required = false) String category) {
 		if(category == null) {
 			return service.getAllProducts();

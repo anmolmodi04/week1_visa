@@ -46,6 +46,5 @@ public class BookingService {
 		b.setBeds(no_of_beds);
 		bookingDao.createBooking(b);
 	}
-
 }
 
