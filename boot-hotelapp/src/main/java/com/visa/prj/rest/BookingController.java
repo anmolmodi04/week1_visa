@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,8 +32,8 @@ public class BookingController {
 	}
 	
 	@PostMapping("hotels")
-	public ResponseEntity<Booking> addProduct(@RequestBody Booking b) {
-		service.createBooking(b);
+	public ResponseEntity<Booking> addCompletedTicket(@RequestBody Booking b) {
+		service.addBooking(b);
 		return new ResponseEntity<>(b, HttpStatus.CREATED); //Status code and entity
 	}
 }

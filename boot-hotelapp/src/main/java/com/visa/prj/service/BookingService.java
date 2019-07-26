@@ -31,8 +31,9 @@ public class BookingService {
 	@Transactional //We write this when we have to make changes in DB
 	public void addBooking(Booking b) {
 		
-		  Hotel h = hotelDao.findById(b.getHotel().getId()).get(); User u =
-		  userDao.findById(b.getUser().getUsername()).get(); b.setHotel(h);
+		  Hotel h = hotelDao.findById(b.getHotel().getId()).get(); 
+		  User u =userDao.findById(b.getUser().getUsername()).get(); 
+		  b.setHotel(h);
 		  b.setUser(u); 
 		  b.setHotel(h);
 		  bookingDao.save(b);
@@ -40,11 +41,6 @@ public class BookingService {
 	
 	public List<Hotel> getHotels() {
 		return hotelDao.findAll();
-	}
-	
-	@Transactional
-	public void createBooking(Booking b) {
-		bookingDao.save(b);
 	}
 	
 }
